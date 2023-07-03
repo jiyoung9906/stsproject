@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link rel="stylesheet" href="/vs/resources/css/main.css">
+<link rel="stylesheet" href="/stsproject/resources/css/main.css">
+<link rel="stylesheet" href="/stsproject/resources/css/board.css">
 <script src="/vs/resources/js/httpRequest.js"></script>
 
 <!-- 동물 유형 선택 -->
@@ -171,7 +172,7 @@
 				onclick="toggleAnimalSelection(this)">기타
 			</label><br>
 
-			<div id="apply-button" onclick="applySelection()">적용</div>
+			<button id="apply-button" onclick="applySelection()">적용</button>
 		</div>
 	</form>
 
