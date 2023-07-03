@@ -1,0 +1,123 @@
+@charset "utf-8";
+video {
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+nav {
+  position: absolute;
+  background-color: rgba(255,255,255,0.2);
+  color: #ffffff;
+  padding: 10px;
+  text-align: right;
+  top:0;
+  left:0;
+  width: 98%;
+  z-index: 2;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display:flex;
+  justify-content: space-between;
+}
+
+.menu li img {
+  /* 로고 이미지의 스타일링을 추가 */
+  float: left;
+  margin-right: 10px;
+}
+
+.menu {
+  list-style: none;
+
+
+}
+.menu li {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  margin-right: 10px;
+}
+
+.menu li:first-child {
+  margin-right: auto;
+}
+
+.menu li a {
+  color: #000000;
+  text-decoration: none;
+  
+}
+
+/* 소개 섹션 스타일링 */
+.introduction {
+  padding: 20px;
+}
+
+.introduction h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.introduction p {
+  color: #666;
+  text-align: center;
+}
+
+/* 최신 소식 스타일링 */
+.latest-news {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.latest-news h3 {
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.latest-news ul {
+  list-style: none;
+  padding: 0;
+}
+
+.latest-news li {
+  margin-bottom: 10px;
+}
+
+.latest-news h4 {
+  font-size: 16px;
+  color: #333;
+}
+
+/* 반려동물 사진 갤러리 스타일링 */
+.pet-gallery {
+  padding: 20px;
+}
+
+.pet-gallery h3 {
+  font-size: 20px;
+  color: #333;
+}
+
+/* 이용 안내 및 연락처 스타일링 */
+.contact {
+  padding: 20px;
+  color:#333;
+}
+
+.contact h3 {
+  font-size: 20px;
+  
+}
+
+.footer {
+  background-color: rgba(0,0,0,0.1);
+}
