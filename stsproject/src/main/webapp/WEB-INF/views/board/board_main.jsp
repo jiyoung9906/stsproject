@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="/stsproject/resources/css/main.css">
 <link rel="stylesheet" href="/stsproject/resources/css/board.css">
-<script src="/vs/resources/js/httpRequest.js"></script>
+<script src="/stsproject/resources/js/httpRequest.js"></script>
 
 <!-- 동물 유형 선택 -->
 <script>
@@ -39,32 +39,9 @@
 	function showSelectedAnimals(selectedAnimalText) {
 		alert(selectedAnimalText);
 	}
-
-	// 게시글 데이터 (예시 데이터)
-	var posts = [ {
-		title : "글 제목 1",
-		category : "post",
-		date : "2023-06-25",
-		views : 10
-	}, {
-		title : "글 제목 2",
-		category : "post",
-		date : "2023-06-26",
-		views : 5
-	}, {
-		title : "글 제목 3",
-		category : "question",
-		date : "2023-06-27",
-		views : 20
-	}, {
-		title : "글 제목 4",
-		category : "diary",
-		date : "2023-06-24",
-		views : 15
-	} ];
-
+	
 	// 초기 게시글 목록 표시
-	displayPostList(posts);
+	//displayPostList(posts);
 
 	// 라디오 버튼 변경 시 이벤트 처리
 	var sortOptions = document.getElementsByName("sort-option");
@@ -107,13 +84,14 @@
 			postListContainer.appendChild(postElement);
 		});
 	}
+	
 	// 게시글을 작성을 선택하는 함수
-	function goToPage() {
-		var selectElement = document.getElementById("pageSelect");
-		var selectedValue = selectElement.value;
+	function showSection() {
+		
+		let section = document.getElementById("pageSelect").value;
 
-		if (selectedValue !== "") {
-			window.location.href = selectedValue;
+		if (section !== "") {
+			location.href = "move_selected.do?section="+section;
 		}
 	}
 </script>
@@ -126,7 +104,7 @@
 			<img src="logo.png" alt="Logo">
 		</div>
 		<ul class="menu">
-			<li><a href="board.html">게시판</a></li>
+			<li><a href="board_main.do">게시판</a></li>
 			<li><a href="shopping.html">쇼핑몰</a></li>
 			<li><a href="join.html">회원 가입</a></li>
 			<li><a href="login.html">로그인</a></li>
@@ -135,24 +113,22 @@
 
 	<div>
 		<ul class="board">
-			<li><a href="board_post_4.html" onclick="showSection('post')">Post</a></li>
-			<li><a href="board_question.html"
-				onclick="showSection('question')">Question</a></li>
-			<li><a href="board_management.html"
-				onclick="showSection('management')">Management</a></li>
-			<li><a href="board_diary.html" onclick="showSection('diary')">Diary</a></li>
+			<li><a href="post_list.do">Post</a></li>
+			<li><a href="question_list.do">Question</a></li>
+			<li><a onclick="showSection('Management')">Management</a></li>
+			<li><a onclick="showSection('Diary')">Diary</a></li>
 		</ul>
 	</div>
-
+	
 	<div class="write_post">
 		<h3 class="write_post_2">글쓰기</h3>
 		<select id="pageSelect">
 			<option value="">글쓰기 종류를 선택하세요</option>
-			<option value="write_post.html">Post</option>
-			<option value="write_question.html">Question</option>
-			<option value="write_diary.html">Diary</option>
+			<option value="post">Post</option>
+			<option value="question">Question</option>
+			<option value="diary">Diary</option>
 		</select>
-		<button onclick="goToPage()" class="goToPage">이동</button>
+		<button onclick="showSection()" class="goToPage">이동</button>
 	</div>
 
 	<form method="post" action="/form-action.html"
@@ -194,6 +170,6 @@
 
 	<!-- 게시글 목록 -->
 	<div id="post-list-container"></div>
-	
+
 </body>
 </html>

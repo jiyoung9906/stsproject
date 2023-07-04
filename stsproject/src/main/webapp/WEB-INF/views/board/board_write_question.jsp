@@ -5,8 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/stsproject/resources/css/board_write_post.css">
+<link rel="stylesheet" href="/stsproject/resources/css/board_write_question.css">
 <script src="/stsproject/resources/js/httpRequest.js"></script>
+
 <script>
 		function send( f ){
 			let title = f.title.value;
@@ -29,19 +30,12 @@
 	</script>
 </head>
 <body>
-	<h1>게시물 작성</h1>
+	<h1>Question & Answer</h1>
 
-<%-- 	<h1>${param.section}</h1> --%>
-
-	<form action="/submit-post" method="post" enctype="multipart/form-data">
+	<form action="/submit-post" method="POST" enctype="multipart/form-data">
 		<label for="title">제목:</label> <input type="text" id="title"
 			name="title" required> <label for="content">내용:</label>
 		<textarea id="content" name="content" rows="4" cols="50" required></textarea>
-
-		<div class="file-upload">
-			<label class="file-label" for="image">파일 첨부:</label> <input
-				type="file" id="image" name="image" class="file-input">
-		</div>
 
 		<label for="date">날짜:</label> <input type="date" id="date" name="date"
 			required>
@@ -51,6 +45,7 @@
 		<label><input type="checkbox" name="동물 유형 선택" value="cat">고양이</label>
 		<label><input type="checkbox" name="동물 유형 선택" value="mini">소동물</label>
 		<label><input type="checkbox" name="동물 유형 선택" value="act">기타</label>
+
 		<input type="submit" value="작성">
 	</form>
 </body>

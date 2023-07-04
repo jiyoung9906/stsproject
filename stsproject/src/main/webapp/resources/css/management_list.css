@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: lightblue;
+	color: #fff;
+	padding: 10px;
+	display: flex;
+	/* Flexbox 레이아웃을 사용하여 로고와 메뉴를 같은 라인으로 배치 */
+	align-items: center;
+	/* 수직 가운데 정렬 */
+	justify-content: space-between;
+	/* 좌우 정렬 */
+}
+
+/* 관리 스타일 */
+h1 {
+	text-align: center;
+	margin-top: 100px;
+}
+
+.management-tips {
+	margin-bottom: 20px;
+	padding: 10px;
+	background-color: rgb(213, 244, 254);
+	display: flex;
+	align-items: flex-start;
+}
+
+.management-tips h2 {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.management-tips p {
+	margin-bottom: 5px;
+}
+
+.management-tips .text-wrapper {
+	flex: 1;
+}
+
+.management-tips .image-wrapper {
+	flex: 0 0 300px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.management-tips .image-wrapper-last {
+	flex: 0 0 300px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.management-tips:last-child .image-wrapper {
+	align-items: flex-start;
+}
+
+.management-tips:last-child .image-wrapper-last {
+	align-items: flex-start;
+}
+
+.management-tips .image-wrapper img {
+	max-height: 200px;
+	width: auto;
+}
+
+.management-tips .image-wrapper-last img {
+	max-height: 200px;
+	width: auto;
+	margin-top: -160px;
+}

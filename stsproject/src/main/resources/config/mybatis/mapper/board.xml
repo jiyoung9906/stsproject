@@ -8,6 +8,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from board order by idx DESC
 	</select>
 
+	<!-- 새 글 추가 -->
+	<insert id="board_insert" parameterType="vo.BoardVO">
+		insert into visit
+		values(
+		seq_visit_idx.nextVal,
+		#{title},
+		#{content},
+		#{filename}
+		sysdate,
+		#{animaltype},
+		#{section})
+	</insert>
+	
 </mapper>
 
 
