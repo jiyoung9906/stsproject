@@ -13,7 +13,7 @@
 			let content = f.content.value;
 			
 			//유효성 체크
-			if( name == '' ){
+			if( title == '' ){
 				alert('제목을 입력하세요');
 				return;
 			}
@@ -23,7 +23,7 @@
 				return;
 			}
 			
-			f.action = "write.do"; //url 맵핑(컨트롤러에서만 가능)
+			f.action = "insert.do"; //url 맵핑(컨트롤러에서만 가능)
 			f.submit(); //전송
 		}
 	</script>
@@ -33,7 +33,7 @@
 
 <%-- 	<h1>${param.section}</h1> --%>
 
-	<form action="/submit-post" method="post" enctype="multipart/form-data">
+	<form method="post" enctype="multipart/form-data">
 		<label for="title">제목:</label> <input type="text" id="title"
 			name="title" required> <label for="content">내용:</label>
 		<textarea id="content" name="content" rows="4" cols="50" required></textarea>
@@ -51,7 +51,7 @@
 		<label><input type="checkbox" name="동물 유형 선택" value="cat">고양이</label>
 		<label><input type="checkbox" name="동물 유형 선택" value="mini">소동물</label>
 		<label><input type="checkbox" name="동물 유형 선택" value="act">기타</label>
-		<input type="submit" value="작성">
+		<input type="submit" value="작성" onclick="send(this.form);">
 	</form>
 </body>
 </html>

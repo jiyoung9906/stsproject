@@ -34,31 +34,94 @@ public class BoardController<BoardService> {
 	}
 
 	// 게시판 메인페이지 보기
-	@RequestMapping(value={"/", "/board_main.do"})
+	@RequestMapping(value = { "/", "/board_main.do" })
 	public String showMainPage() {
 		return PATH + "board_main.jsp";
 	}
 
 	// 게시글 전체목록 보기
-	@RequestMapping(value = {"/post_list.do" })
-	public String vsList(Model model) {
+	@RequestMapping(value = { "/post_list.do" })
+	public String psList(Model model) {
 
 		List<BoardVO> list = board_dao.selectList();
 		model.addAttribute("list", list);
 		return PATH + "post_list.jsp";
 	}
 
-	// 질문글 전체목록 보기
-		@RequestMapping(value = {"/question_list.do" })
-		public String qsList(Model model) {
+	// 게시글 디테일 목록 보기
+	@RequestMapping(value = { "/post_list_detail.do" })
+	public String psdtList(Model model) {
 
-			List<BoardVO> list = board_dao.selectList();
-			model.addAttribute("list", list);
-			return PATH + "question_list.jsp";
-		}
-		
+		List<BoardVO> list = board_dao.selectList();
+		model.addAttribute("list", list);
+		return PATH + "post_list_detail.jsp";
+	}
+
+	// 질문글 전체목록 보기
+	@RequestMapping(value = { "/question_list.do" })
+	public String qsList(Model model) {
+
+		List<BoardVO> list = board_dao.selectList();
+		model.addAttribute("list", list);
+		return PATH + "question_list.jsp";
+	}
+
+	// 질문글 전체목록 보기
+	@RequestMapping(value = { "/question_list_detail.do" })
+	public String qsdtList(Model model) {
+
+		List<BoardVO> list = board_dao.selectList();
+		model.addAttribute("list", list);
+		return PATH + "question_list_detail.jsp";
+	}
+
+	// management 전체목록 보기
+	@RequestMapping(value = { "/management_list.do" })
+	public String mgList(Model model) {
+
+		List<BoardVO> list = board_dao.selectList();
+		model.addAttribute("list", list);
+		return PATH + "management_list.jsp";
+	}
+
+	// 다이어리 전체목록 보기
+	@RequestMapping(value = { "/diary_list.do" })
+	public String diList(Model model) {
+
+		List<BoardVO> list = board_dao.selectList();
+		model.addAttribute("list", list);
+		return PATH + "diary_list.jsp";
+	}
+
+	// 다이어리 디테일 목록 보기
+	@RequestMapping(value = { "/diary_list_detail.do" })
+	public String didtList(Model model) {
+
+		List<BoardVO> list = board_dao.selectList();
+		model.addAttribute("list", list);
+		return PATH + "diary_list_detail.jsp";
+	}
+	
+//	//새 글 쓰기 폼으로 전환
+//	@RequestMapping("/insert_form.do")
+//	public String insert_form() {
+//		return PATH + "board_insert_post.jsp";
+//	}
+//	
+//	//새 글 쓰기 폼으로 전환
+//	@RequestMapping("/insert_form.do")
+//	public String insert_form1() {
+//		return PATH + "board_insert_question.jsp";
+//	}
+//	
+//	//새 글 쓰기 폼으로 전환
+//	@RequestMapping("/insert_form.do")
+//	public String insert_form2() {
+//		return PATH + "board_insert_diary.jsp";
+//	}
+	
 	// 새 글 쓰기
-	@RequestMapping("/write.do")
+	@RequestMapping("/insert.do")
 	public String insert(BoardVO vo) {
 		// 절대경로를 찾기위한 준비
 		String webPath = "/resources/upload/";
@@ -108,14 +171,14 @@ public class BoardController<BoardService> {
 		System.out.println("Section: " + section);
 
 		if (section.equals("post")) {
-			return PATH + "board_write_post.jsp";
+			return PATH + "board_insert_post.jsp";
 		} else if (section.equals("question")) {
-			return PATH + "board_write_question.jsp";
+			return PATH + "board_insert_question.jsp";
 		} else if (section.equals("diary")) {
-			return PATH + "board_write_diary.jsp";
+			return PATH + "board_insert_diary.jsp";
 		}
 
 		// 기본적으로는 board_write_post.jsp로 이동
-		return PATH + "board_write_post.jsp";
+		return PATH + "board_insert_post.jsp";
 	}
 }

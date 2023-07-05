@@ -20,9 +20,8 @@ public class BoardDAO {
 	
 	// 글 목록 표시
 	public List<BoardVO> selectList() {
-//		List<BoardVO> list = sqlSession.selectList("b.board_list");
-//		return list; //DB에서 얻어낸 List를 반환
-		return null;
+		List<BoardVO> list = sqlSession.selectList("b.post_list");
+		return list; //DB에서 얻어낸 List를 반환
 	}
 
 	// 새 글 추가
@@ -31,7 +30,6 @@ public class BoardDAO {
 		// 맵퍼로 전달되는 파라미터 값은 무조건 한 개
 		int res = sqlSession.insert("b.board_insert", vo); 
 		return res;
-	} // 맵퍼로 가서 visit_insert만들어야함(visit.xml)
-	
+	}
 	
 }

@@ -5,8 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet"
-	href="/stsproject/resources/css/board_management.css">
+<link rel="stylesheet" href="/stsproject/resources/css/main.css">
+<link rel="stylesheet" href="/stsproject/resources/css/home.css">
+<link rel="stylesheet" href="/stsproject/resources/css/management_list.css">
 <script src="/stsproject/resources/js/httpRequest.js"></script>
 
 </head>
@@ -15,7 +16,7 @@
 	<nav>
 		<div class="logo">
 			<!-- 로고 이미지 삽입 -->
-			<img src="logo.png" alt="Logo">
+			<img src="/stsproject/resources/images/Logo.jpg" alt="Logo">
 		</div>
 		<ul class="menu">
 			<li><a href="board.html">게시판</a></li>
@@ -35,7 +36,7 @@
 			<p>3. 적절한 식사 및 청결한 물 공급을 유지하세요.</p>
 		</div>
 		<div class="image-wrapper">
-			<img src="dogtooth.jpg" alt="반려동물 건강 관리">
+			<img src="/stsproject/resources/images/dogtooth.jpg" alt="반려동물 건강 관리">
 		</div>
 	</div>
 
@@ -47,7 +48,7 @@
 			<p>3. 불필요한 행동에 대한 경고와 무시를 통해 올바른 행동을 독려하세요.</p>
 		</div>
 		<div class="image-wrapper">
-			<img src="study.png" alt="반려동물 건강 관리">
+			<img src="/stsproject/resources/images/study.png" alt="반려동물 건강 관리">
 		</div>
 	</div>
 
@@ -58,8 +59,9 @@
 			<p>2. 안전하고 편안한 숙소를 마련하고 청소를 꾸준히 실시하세요.</p>
 			<p>3. 동물에게 적합한 실내 및 외부 환경을 조성하세요.</p>
 			<div class="image-wrapper-last">
-				<img src="run.jpg" alt="반려동물 건강 관리">
+				<img src="/stsproject/main/resources/images/run.jpg" alt="반려동물 건강 관리">
 			</div>
 		</div>
+	</div>
 </body>
 </html>

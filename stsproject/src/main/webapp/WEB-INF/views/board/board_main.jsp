@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" href="/stsproject/resources/css/main.css">
+<!-- <link rel="stylesheet" href="/stsproject/resources/css/home.css"> -->
 <link rel="stylesheet" href="/stsproject/resources/css/board.css">
 <script src="/stsproject/resources/js/httpRequest.js"></script>
 
@@ -99,10 +100,10 @@
 <body>
 	<!-- 상단 네비게이션 바 -->
 	<nav>
-		<div class="logo">
-			<!-- 로고 이미지 삽입 -->
-			<img src="logo.png" alt="Logo">
-		</div>
+<!-- 		<div class="logo"> -->
+<!-- 			<!-- 로고 이미지 삽입 --> -->
+<!-- 			<img src="/stsproject/resources/images/Logo.jpg" alt="Logo"> -->
+<!-- 		</div> -->
 		<ul class="menu">
 			<li><a href="board_main.do">게시판</a></li>
 			<li><a href="shopping.html">쇼핑몰</a></li>
@@ -115,8 +116,8 @@
 		<ul class="board">
 			<li><a href="post_list.do">Post</a></li>
 			<li><a href="question_list.do">Question</a></li>
-			<li><a onclick="showSection('Management')">Management</a></li>
-			<li><a onclick="showSection('Diary')">Diary</a></li>
+			<li><a href="management_list.do">Management</a></li>
+			<li><a href="diary_list.do">Diary</a></li>
 		</ul>
 	</div>
 	

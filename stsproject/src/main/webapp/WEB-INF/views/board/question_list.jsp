@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/stsproject/resources/css/main.css">
+<link rel="stylesheet" href="/stsproject/resources/css/home.css">
 <link rel="stylesheet" href="/stsproject/resources/css/question_list.css">
 <script src="/stsproject/resources/js/httpRequest.js"></script>
 

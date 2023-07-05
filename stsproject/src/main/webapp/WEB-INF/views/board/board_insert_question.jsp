@@ -14,7 +14,7 @@
 			let content = f.content.value;
 			
 			//유효성 체크
-			if( name == '' ){
+			if( title == '' ){
 				alert('제목을 입력하세요');
 				return;
 			}
