@@ -48,31 +48,13 @@ public class BoardController<BoardService> {
 		return PATH + "post_list.jsp";
 	}
 
-	// 게시글 디테일 목록 보기
-	@RequestMapping(value = { "/post_list_detail.do" })
-	public String psdtList(Model model) {
-
-		List<BoardVO> list = board_dao.selectList();
-		model.addAttribute("list", list);
-		return PATH + "post_list_detail.jsp";
-	}
-
 	// 질문글 전체목록 보기
 	@RequestMapping(value = { "/question_list.do" })
 	public String qsList(Model model) {
 
-		List<BoardVO> list = board_dao.selectList();
-		model.addAttribute("list", list);
+		List<BoardVO> list = board_dao.selectQuestionList();
+		model.addAttribute("qadata", list);
 		return PATH + "question_list.jsp";
-	}
-
-	// 질문글 전체목록 보기
-	@RequestMapping(value = { "/question_list_detail.do" })
-	public String qsdtList(Model model) {
-
-		List<BoardVO> list = board_dao.selectList();
-		model.addAttribute("list", list);
-		return PATH + "question_list_detail.jsp";
 	}
 
 	// management 전체목록 보기
@@ -93,36 +75,11 @@ public class BoardController<BoardService> {
 		return PATH + "diary_list.jsp";
 	}
 
-	// 다이어리 디테일 목록 보기
-	@RequestMapping(value = { "/diary_list_detail.do" })
-	public String didtList(Model model) {
-
-		List<BoardVO> list = board_dao.selectList();
-		model.addAttribute("list", list);
-		return PATH + "diary_list_detail.jsp";
-	}
-	
-//	//새 글 쓰기 폼으로 전환
-//	@RequestMapping("/insert_form.do")
-//	public String insert_form() {
-//		return PATH + "board_insert_post.jsp";
-//	}
-//	
-//	//새 글 쓰기 폼으로 전환
-//	@RequestMapping("/insert_form.do")
-//	public String insert_form1() {
-//		return PATH + "board_insert_question.jsp";
-//	}
-//	
-//	//새 글 쓰기 폼으로 전환
-//	@RequestMapping("/insert_form.do")
-//	public String insert_form2() {
-//		return PATH + "board_insert_diary.jsp";
-//	}
-	
 	// 새 글 쓰기
 	@RequestMapping("/insert.do")
 	public String insert(BoardVO vo) {
+		System.out.println("vo:" + vo);
+
 		// 절대경로를 찾기위한 준비
 		String webPath = "/resources/upload/";
 		String savePath = application.getRealPath(webPath);
@@ -162,9 +119,21 @@ public class BoardController<BoardService> {
 		board_dao.insertUser(vo); // DAO로 가서 insertUser메서드 만들어야함
 
 		// Controller에서 url매핑을 호출해야 하는 경우
-		return "redirect:list.do";
+		return "redirect:post_list.do";
 	}
 
+	// question 글 쓰기
+	@RequestMapping("/qainsert.do")
+	public String qainsert(BoardVO vo) {
+		System.out.println("vo:" + vo);
+		
+		// 데이터 저장
+	    board_dao.qainsertUser(vo);
+	    
+		// Controller에서 url매핑을 호출해야 하는 경우
+		return "redirect:question_list.do";
+	}
+	
 	// 글쓰기 종류 선택
 	@RequestMapping("move_selected.do")
 	public String moveSel(@RequestParam("section") String section) {

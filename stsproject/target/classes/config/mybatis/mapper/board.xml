@@ -8,17 +8,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from post order by idx DESC
 	</select>
 
+	<select id="question_list" resultType="vo.BoardVO">
+		select * from question order by qaidx DESC
+	</select>
+
 	<!-- 새 글 추가 -->
 	<insert id="board_insert" parameterType="vo.BoardVO">
-		insert into post
-		values(
-		seq_visit_idx.nextVal,
+		insert into post values(
+		post_seq.nextVal,
 		#{title},
 		#{content},
-		#{filename}
 		sysdate,
 		#{animaltype},
-		#{section})
+		#{section},
+		#{filename})
+	</insert>
+
+	<!-- 새 글 추가 -->
+	<insert id="question_insert" parameterType="vo.BoardVO">
+		insert into question values(
+		question_seq.nextVal,
+		#{qatitle},
+		#{qacontent},
+		#{qadate},
+		#{qaanimaltype},
+		#{qasection})
 	</insert>
 	
 </mapper>

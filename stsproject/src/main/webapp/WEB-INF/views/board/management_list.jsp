@@ -14,10 +14,10 @@
 <body>
 	<!-- 상단 네비게이션 바 -->
 	<nav>
-		<div class="logo">
-			<!-- 로고 이미지 삽입 -->
-			<img src="/stsproject/resources/images/Logo.jpg" alt="Logo">
-		</div>
+<!-- 		<div class="logo"> -->
+<!-- 			<!-- 로고 이미지 삽입 --> -->
+<!-- 			<img src="/stsproject/resources/images/Logo.jpg" alt="Logo"> -->
+<!-- 		</div> -->
 		<ul class="menu">
 			<li><a href="board.html">게시판</a></li>
 			<li><a href="shopping.html">쇼핑몰</a></li>
@@ -59,7 +59,7 @@
 			<p>2. 안전하고 편안한 숙소를 마련하고 청소를 꾸준히 실시하세요.</p>
 			<p>3. 동물에게 적합한 실내 및 외부 환경을 조성하세요.</p>
 			<div class="image-wrapper-last">
-				<img src="/stsproject/main/resources/images/run.jpg" alt="반려동물 건강 관리">
+				<img src="/stsproject/resources/images/run.jpg" alt="반려동물 건강 관리">
 			</div>
 		</div>
 	</div>

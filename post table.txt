@@ -1,0 +1,20 @@
+-- 시퀀스 생성
+CREATE SEQUENCE post_seq;
+
+-- 게시판 테이블
+CREATE TABLE post(
+	idx NUMBER(30) PRIMARY KEY,
+	title VARCHAR2(200), -- 제목
+	content VARCHAR2(4000), -- 내용
+	regdate DATE, --등록일
+	animaltype VARCHAR2(200), --동물유형선택
+	section VARCHAR2(200) --게시판 등록 유형 선택
+);
+
+-- 샘플 데이터
+INSERT INTO post VALUES (post_seq.nextVal, '안녕하세요', '우리집 강아지를 소개합니다', sysdate, '강아지', 'Post');
+
+-- filename이라는 컬럼을 보드 테이블에 추가
+ALTER TABLE post ADD filename VARCHAR2(200);
+
+COMMIT;
